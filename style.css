@@ -21,8 +21,9 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid #000;
     border-radius: 12px;
-    width: 400px;
-    height: 400px;
+    width: 90%;
+    max-width: 400px;
+    min-height: 400px;
     text-align: center;
     box-shadow: 5px 9px 2px 1px #fff;
 
@@ -38,3 +39,4 @@ body{
 #QrButton{
     font-size: 20px;
 }
+#
