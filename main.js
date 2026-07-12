@@ -47,6 +47,7 @@ window.addEventListener("resize",()=>{
 const url = document.getElementById("QrUrl");
 const buton = document.getElementById("QrButton");
 const image = document.getElementById("QrImg");
+const download = document.getElementById("QrDownload");
 
 buton.addEventListener("click", async function () {
   const dataURL = await QRCode.toDataURL(url.value);
@@ -54,10 +55,11 @@ buton.addEventListener("click", async function () {
   image.src = dataURL;
 });
 
-function download(){
+download.addEventListener("clock", function(){
     const link = document.createElement("a");
-    link.href = image;
-    link.download = "Qr-Code.png";
+
+    link.href = image.toDataURL("image/png");
+    link.download = "QrCode.png";
 
     link.click();
-}
+})
