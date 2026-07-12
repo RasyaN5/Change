@@ -53,3 +53,11 @@ buton.addEventListener("click", async function () {
   console.log(dataURL);
   image.src = dataURL;
 });
+
+function download(){
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "Qr-Code.png";
+
+    link.click();
+}
