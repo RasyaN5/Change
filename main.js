@@ -55,10 +55,15 @@ buton.addEventListener("click", async function () {
   image.src = dataURL;
 });
 
-download.addEventListener("clock", function(){
+download.addEventListener("clock", () => {
+    if(!image.src){
+        alert("Buat QR CODE terlebih dahulu ");
+        return;
+    }
+
     const link = document.createElement("a");
 
-    link.href = image.toDataURL("image/png");
+    link.href = image.src;
     link.download = "QrCode.png";
 
     link.click();
