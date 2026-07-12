@@ -55,7 +55,7 @@ buton.addEventListener("click", async function () {
   image.src = dataURL;
 });
 
-download.addEventListener("clock", () => {
+download.addEventListener("click", () => {
     if(!image.src){
         alert("Buat QR CODE terlebih dahulu ");
         return;
