@@ -46,25 +46,25 @@ window.addEventListener("resize",()=>{
 
 const url = document.getElementById("QrUrl");
 const buton = document.getElementById("QrButton");
-const image = document.getElementById("QrImg");
-const download = document.getElementById("QrDownload");
+const imag = document.getElementById("QrImg");
+const downlo = document.getElementById("QrDownload");
 
 buton.addEventListener("click", async function () {
   const dataURL = await QRCode.toDataURL(url.value);
   console.log(dataURL);
-  image.src = dataURL;
+  imag.src = dataURL;
 });
 
-download.addEventListener("click", () => {
-    if(!image.src){
+downlo.addEventListener("click", () => {
+    if(!imag.src){
         alert("Buat QR CODE terlebih dahulu ");
         return;
     }
 
     const link = document.createElement("a");
 
-    link.href = image.src;
-    link.download = "QrCode.png";
+    link.href = imag.src;
+    link.download= "QrCode.png";
 
     link.click();
 })
